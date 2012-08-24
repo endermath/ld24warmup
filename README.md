@@ -8,7 +8,7 @@ It is a game written in python using pygame.
 
 How to run the game
 -------------------
-> python ld24warm.py
+`python ld24warm.py`
 
 
 How to play the game
