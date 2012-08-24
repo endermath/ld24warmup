@@ -3,6 +3,11 @@ from pygame.locals import *
 from chicken import *
 from ship import *
 
+if getattr(sys, 'frozen', None):
+     basedir = sys._MEIPASS
+else:
+     basedir = os.path.dirname(__file__)
+     
 # pygame init
 pygame.init()
 fpsClock = pygame.time.Clock()
@@ -23,13 +28,13 @@ deathSound = pygame.mixer.Sound("Retro_Death.wav")
 chickList = []
 for i in range(100):
     chickList.append(Chicken())
-    print chickList[-1].xPos
 
 # Create ship
 myShip = Ship()
 
 # Clear screen with fixed color
-windowSurface.fill((17,134,17))
+grassColor = pygame.Color('0x118611')
+windowSurface.fill(grassColor)
 
 # event loop
 
