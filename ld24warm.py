@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, os
 from pygame.locals import *
 from chicken import *
 from ship import *
@@ -16,13 +16,14 @@ windowSurface = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.mixer.init()
 
 # load resources
-chickenLeftSurface = pygame.transform.scale2x(pygame.image.load("chicken.png"))
+chickenLeftSurface = pygame.transform.scale2x(pygame.image.load(os.path.join(basedir,"chicken.png")))
 chickenRightSurface = pygame.transform.flip(chickenLeftSurface,True,False)
 
-shipSurface = pygame.transform.scale2x(pygame.image.load("ship.png"))
+shipSurface = pygame.transform.scale2x(pygame.image.load(os.path.join(basedir,"ship.png")))
 
-laserSound = pygame.mixer.Sound("Laser_Squeak.wav")
-deathSound = pygame.mixer.Sound("Retro_Death.wav")
+laserSound = pygame.mixer.Sound(os.path.join(basedir,"Laser_Squeak.wav"))
+deathSound = pygame.mixer.Sound(os.path.join(basedir,"Retro_Death.wav"))
+
 
 # Create chickens
 chickList = []
