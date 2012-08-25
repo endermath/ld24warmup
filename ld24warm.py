@@ -24,6 +24,9 @@ shipSurface = pygame.transform.scale2x(pygame.image.load(os.path.join(basedir,"s
 laserSound = pygame.mixer.Sound(os.path.join(basedir,"Laser_Squeak.wav"))
 deathSound = pygame.mixer.Sound(os.path.join(basedir,"Retro_Death.wav"))
 
+pygame.mixer.music.load(os.path.join(basedir,"bu-woeful-matrices.it"))
+pygame.mixer.music.play()
+
 
 # Create chickens
 chickList = []
